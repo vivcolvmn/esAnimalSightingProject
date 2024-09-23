@@ -19,9 +19,30 @@ const SightingForm = ({ addSighting }) => {
   };
 
   // Handle form submission
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    addSighting(formData);
+
+    // Validate required fields
+    if (!formData.dateTime || !formData.individualId || !formData.location || !formData.email || !formData.createdAt) {
+      alert('All fields are required!');
+      return;
+    }
+
+    // Format the date to ISO 8601 if needed
+    const formattedDateTime = new Date(formData.dateTime).toISOString();
+    const formattedCreatedAt = new Date(formData.createdAt).toISOString();
+
+    // Prepare the new sighting object
+    const newSighting = {
+      ...formData,
+      dateTime: formattedDateTime,
+      createdAt: formattedCreatedAt,
+    };
+
+    // Call the function to add the sighting
+    await addSighting(newSighting);
+
+    // Reset form after submission
     setFormData({
       dateTime: '',
       individualId: '',

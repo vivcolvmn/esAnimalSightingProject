@@ -1,42 +1,118 @@
-#root {
-  max-width: 1280px;
+/* General reset for cross-browser consistency */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Body style with a light shade of green for the background */
+body {
+  background-color: #e0f7df; /* Light green */
+  color: #1b5e20; /* Dark green */
+  line-height: 1.6;
+  padding: 20px;
+}
+
+/* Header style */
+h1, h2 {
+  color: #2e7d32; /* Medium green */
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Container for the main app */
+.App {
+  max-width: 800px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 20px;
+  background-color: #f1f8e9; /* Lighter green background */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling for the sighting list */
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  background-color: #a5d6a7; /* Light-medium green for list items */
+  margin-bottom: 10px;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+li:hover {
+  background-color: #81c784; /* Slightly darker green on hover */
+  transition: background-color 0.3s ease;
+}
+
+/* Styling the form */
+form {
+  margin-top: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  color: #2e7d32; /* Medium green for labels */
+}
+
+input, select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #81c784;
+  border-radius: 5px;
+  background-color: #f1f8e9; /* Lighter green */
+  color: #2e7d32;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: #388e3c; /* Darker green on focus */
+}
+
+/* Button styling */
+button {
+  background-color: #66bb6a; /* Medium green */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #388e3c; /* Darker green on hover */
+}
+
+button:active {
+  background-color: #7e57c2; /* Purple for active state */
+}
+
+/* Error message styling */
+p.error {
+  color: #c62828; /* Red for error messages */
+  font-weight: bold;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Media query for responsive design */
+@media (max-width: 600px) {
+  .App {
+    padding: 10px;
   }
-  to {
-    transform: rotate(360deg);
+
+  h1, h2 {
+    font-size: 1.5rem;
   }
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+  input, select, button {
+    font-size: 1rem;
   }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
 }
